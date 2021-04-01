@@ -1,5 +1,5 @@
 FROM ubuntu:bionic
-
+ENTRYPOINT ["/bin/bash"]
 RUN apt update \
 && apt install apt-transport-https ca-certificates -y \
 && sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirrors.sjtug.sjtu.edu.cn/g' /etc/apt/sources.list \
@@ -18,7 +18,8 @@ RUN apt update \
 && make install \
 && ldconfig \
 && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib' >> ~/.bashrc \
-&& source ~/.bashrc \
+&& export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib \
+    # && source ~/.bashrc \
 && cp $HOME/uhd/host/utils/uhd-usrp.rules /etc/udev/rules.d/ \
 && udevadm control --reload-rules \
 && udevadm trigger \
