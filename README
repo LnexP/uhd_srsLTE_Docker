@@ -13,4 +13,16 @@ This Dockerfile changes the APT source to SJTUG Ubuntu Source. If you are **not 
 
 I have test this file on a B210 board, it runs correctly.
 
+## Get into container
+
+run 
+
+`udevadm control --reload-rules` 
+
+`udevadm trigger` 
+
+`~/srsLTE/build/srslte_install_configs.sh service`
+
+after attach to the container.
+
 
