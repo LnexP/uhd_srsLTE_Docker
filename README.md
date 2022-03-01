@@ -12,7 +12,6 @@ If you are using **ETTUS N series USRP**, you possibly need to use port mapping 
 This Dockerfile changes the APT source to SJTUG Ubuntu Source. If you are **not living in China**, you need change the APT source to whatever you like.
 
 I have test this file on a B210 board, it runs correctly.
-<<<<<<< HEAD:README
 
 ## Get into container
 
@@ -26,6 +25,3 @@ run
 
 after attach to the container.
 
-
-=======
->>>>>>> 684d009e5286d81182894ca3ab3f8aafdba391ea:README.md
